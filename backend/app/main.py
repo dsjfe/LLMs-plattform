@@ -17,32 +17,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 导入路由
-# from app.api.routes import question_generation, model_evaluation, document_analysis, data_management
+# 导入API路由
+from app.api import api_router
 
 @app.get("/")
 async def root():
     return {"message": "欢迎使用大模型评测平台API"}
 
-# 题目生成模块API
-@app.get("/api/question-generation")
-async def get_question_generation():
-    return {"message": "题目生成模块API"}
-
-# 模型评测模块API
-@app.get("/api/model-evaluation")
-async def get_model_evaluation():
-    return {"message": "模型评测模块API"}
-
-# 文档拆解模块API
-@app.get("/api/document-analysis")
-async def get_document_analysis():
-    return {"message": "文档拆解模块API"}
-
-# 数据管理与格式转换模块API
-@app.get("/api/data-management")
-async def get_data_management():
-    return {"message": "数据管理与格式转换模块API"}
+# 注册API路由
+app.include_router(api_router, prefix="/api")
 
 if __name__ == "__main__":
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)

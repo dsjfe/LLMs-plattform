@@ -143,4 +143,9 @@ const PromptGeneration = () => {
   );
 };
 
-export default PromptGeneration;
+// 新增：定义QuestionGenerationPage组件
+const QuestionGenerationPage = () => {
+  return <PromptGeneration />;
+};
+
+export default QuestionGenerationPage;
