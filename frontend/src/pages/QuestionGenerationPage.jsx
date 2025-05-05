@@ -149,11 +149,13 @@ const PromptGeneration = () => {
                     ))}
                   </Box>
                   <Box sx={{ mt: 1 }}>
-                    <Chip
-                      label={`难度: ${question.difficulty}`}
-                      size="small"
-                      sx={{ mr: 1 }}
-                    />
+                    {question.difficulty && (
+                      <Chip
+                        label={`难度: ${question.difficulty}`}
+                        size="small"
+                        sx={{ mr: 1 }}
+                      />
+                    )}
                     <Chip
                       label={`类型: ${question.type}`}
                       size="small"
