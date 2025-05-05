@@ -29,29 +29,44 @@ const PromptGeneration = () => {
   const [questionType, setQuestionType] = useState('multiple_choice');
   const [difficulty, setDifficulty] = useState('medium');
   const [category, setCategory] = useState('general');
+  const [numQuestions, setNumQuestions] = useState(5);
   const [generatedQuestions, setGeneratedQuestions] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  // 模拟生成题目
-  const handleGenerate = () => {
-    // 这里将来会调用API生成题目
-    const mockQuestions = [
-      {
-        id: 1,
-        question: '以下哪个模型是由OpenAI开发的？',
-        type: 'multiple_choice',
-        options: ['Claude', 'GPT-4', 'LLaMA', 'PaLM'],
-        answer: 'GPT-4',
-        difficulty: 'easy',
-      },
-      {
-        id: 2,
-        question: '大语言模型的训练过程中，什么是"微调"？',
-        type: 'multiple_choice',
-        options: ['预训练的延续', '从零开始训练', '数据增强', '模型压缩'],
-        answer: '预训练的延续',
-        difficulty: 'medium'
-      }]
-    setGeneratedQuestions(mockQuestions);
+  // 调用后端API生成题目
+  const handleGenerate = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch('http://localhost:8000/api/question-generation/from-prompt', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          prompt: promptText,
+          num_questions: numQuestions,
+          question_type: questionType,
+        }),
+      });
+      if (!response.ok) {
+        throw new Error('生成题目失败');
+      }
+      const data = await response.json();
+      setGeneratedQuestions(
+        data.questions.map(q => ({
+          id: q.id,
+          question: q.content,
+          type: q.type,
+          options: q.options,
+          answer: q.answer,
+          // 可根据后端返回补充其它字段
+        }))
+      );
+    } catch (error) {
+      setGeneratedQuestions([]);
+      alert('生成题目失败，请重试');
+    }
+    setLoading(false);
   };
 
   return (
@@ -81,6 +96,16 @@ const PromptGeneration = () => {
                 <MenuItem value="short_answer">简答题</MenuItem>
               </Select>
             </FormControl>
+            {/* 新增：题目数量输入框 */}
+            <TextField
+              fullWidth
+              type="number"
+              label="题目数量"
+              value={numQuestions}
+              onChange={(e) => setNumQuestions(Number(e.target.value))}
+              inputProps={{ min: 1, max: 30 }}
+              sx={{ mb: 2 }}
+            />
             <FormControl fullWidth sx={{ mb: 2 }}>
               <InputLabel>难度</InputLabel>
               <Select
@@ -98,8 +123,9 @@ const PromptGeneration = () => {
               onClick={handleGenerate}
               startIcon={<AddIcon />}
               fullWidth
+              disabled={loading}
             >
-              生成题目
+              {loading ? '生成中...' : '生成题目'}
             </Button>
           </Paper>
         </Grid>
