@@ -143,8 +143,15 @@ const PromptGeneration = () => {
                       <Chip
                         key={index}
                         label={option}
-                        color={option === question.answer ? 'primary' : 'default'}
-                        sx={{ mr: 1, mb: 1 }}
+                        color={option.charAt(0) === question.answer ? 'primary' : 'default'}
+                        sx={{
+                          mr: 1,
+                          mb: 1,
+                          display: 'block',
+                          textAlign: 'center',
+                          alignItems: 'center',  // 垂直居中
+                          justifyContent: 'center',  // 水平居中
+                        }}
                       />
                     ))}
                   </Box>

@@ -3,60 +3,60 @@
         {
             "id": "1",
             "type": "multiple_choice",
-            "content": "为什么冰箱里的某些食物不会被冻成冰块？",
+            "content": "摩擦力的方向总是与物体运动方向？",
             "options": [
-                "A. 冰箱温度设置在0℃以上",
-                "B. 食物本身含有防腐剂",
-                "C. 冰箱门经常被打开",
-                "D. 食物包装不透气"
-            ],
-            "answer": "A"
-        },
-        {
-            "id": "2",
-            "type": "multiple_choice",
-            "content": "喝冰水会导致体重增加吗？",
-            "options": [
-                "A. 不会",
-                "B. 会",
-                "C. 取决于水量",
-                "D. 只在早晨有效"
-            ],
-            "answer": "A"
-        },
-        {
-            "id": "3",
-            "type": "multiple_choice",
-            "content": "在雨中奔跑是否比走路更不容易湿？",
-            "options": [
-                "A. 是",
-                "B. 否",
-                "C. 一样",
-                "D. 取决于风向"
-            ],
-            "answer": "A"
-        },
-        {
-            "id": "4",
-            "type": "multiple_choice",
-            "content": "以下句子中成语使用正确的是？",
-            "options": [
-                "A. 这部电影情节差强人意，令人失望",
-                "B. 她为了救孩子火中取栗的行为令人敬佩",
-                "C. 这个方案天衣无缝, 完全可行",
-                "D. 这道题百思不得其解, 最终恍然大悟"
+                "A. 相同",
+                "B. 相反",
+                "C. 垂直",
+                "D. 不一定与运动方向相反"
             ],
             "answer": "D"
         },
         {
+            "id": "2",
+            "type": "multiple_choice",
+            "content": "-3 × (-4) 的计算结果是多少？",
+            "options": [
+                "A. -12",
+                "B. -7",
+                "C. 7",
+                "D. 12"
+            ],
+            "answer": "D"
+        },
+        {
+            "id": "3",
+            "type": "multiple_choice",
+            "content": "骆驼的驼峰主要用于储存？",
+            "options": [
+                "A. 水分",
+                "B. 食物",
+                "C. 脂肪",
+                "D. 盐分"
+            ],
+            "answer": "C"
+        },
+        {
+            "id": "4",
+            "type": "multiple_choice",
+            "content": "中国改革开放始于哪一年？",
+            "options": [
+                "A. 1949年",
+                "B. 1978年",
+                "C. 1992年",
+                "D. 2001年"
+            ],
+            "answer": "B"
+        },
+        {
             "id": "5",
             "type": "multiple_choice",
-            "content": "地球离太阳最近时处于哪个季节？",
+            "content": "世界上最长的河流是？",
             "options": [
-                "A. 北半球冬季",
-                "B. 北半球夏季",
-                "C. 春秋季之间",
-                "D 全球同时进入最近季节"
+                "A. 尼罗河",
+                "B. 长江",
+                "C. 黄河",
+                "D. 亚马逊河"
             ],
             "answer": "A"
         }
