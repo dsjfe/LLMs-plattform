@@ -3,62 +3,26 @@
         {
             "id": "1",
             "type": "multiple_choice",
-            "content": "摩擦力的方向总是与物体运动方向？",
+            "content": "下列成语中哪个的意思与字面相差最远？",
             "options": [
-                "A. 相同",
-                "B. 相反",
-                "C. 垂直",
-                "D. 不一定与运动方向相反"
-            ],
-            "answer": "D"
-        },
-        {
-            "id": "2",
-            "type": "multiple_choice",
-            "content": "-3 × (-4) 的计算结果是多少？",
-            "options": [
-                "A. -12",
-                "B. -7",
-                "C. 7",
-                "D. 12"
-            ],
-            "answer": "D"
-        },
-        {
-            "id": "3",
-            "type": "multiple_choice",
-            "content": "骆驼的驼峰主要用于储存？",
-            "options": [
-                "A. 水分",
-                "B. 食物",
-                "C. 脂肪",
-                "D. 盐分"
-            ],
-            "answer": "C"
-        },
-        {
-            "id": "4",
-            "type": "multiple_choice",
-            "content": "中国改革开放始于哪一年？",
-            "options": [
-                "A. 1949年",
-                "B. 1978年",
-                "C. 1992年",
-                "D. 2001年"
+                "A. 对牛弹琴",
+                "B. 想入非非",
+                "C. 杞人忧天",
+                "D. 马到成功"
             ],
             "answer": "B"
         },
         {
-            "id": "5",
+            "id": "2",
             "type": "multiple_choice",
-            "content": "世界上最长的河流是？",
+            "content": "国际单位制中重力加速度的标准单位是什么？",
             "options": [
-                "A. 尼罗河",
-                "B. 长江",
-                "C. 黄河",
-                "D. 亚马逊河"
+                "A. 米/秒",
+                "B. 米/秒²",
+                "C. 牛顿/千克",
+                "D. 千克·米²"
             ],
-            "answer": "A"
+            "answer": "B"
         }
     ]
 }
